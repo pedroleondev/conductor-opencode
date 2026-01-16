@@ -53,7 +53,7 @@ Quando você executa `/conductor:setup`, o Conductor ajuda a definir os componen
 - `conductor/tracks.md`
 
 ```bash
-/conductor:setup
+/conductor-setup
 ```
 
 ### 2. Inicie uma Nova Track (Recurso ou Bug)
@@ -69,9 +69,9 @@ Quando estiver pronto para assumir um novo recurso ou correção de bug, execute
 - `conductor/tracks/<track_id>/metadata.json`
 
 ```bash
-/conductor:newTrack
+/conductor-newtrack
 # OU com uma descrição
-/conductor:newTrack "Adicionar um botão de modo escuro na página de configurações"
+/conductor-newtrack "Adicionar um botão de modo escuro na página de configurações"
 ```
 
 ### 3. Implemente a Track
@@ -83,7 +83,7 @@ Uma vez aprovado o plano, execute `/conductor:implement`. Seu agente de codifica
 - `conductor/tracks/<track_id>/plan.md` (Atualizações de status)
 
 ```bash
-/conductor:implement
+/conductor-implement
 ```
 
 O Conductor irá:
@@ -95,22 +95,22 @@ O Conductor irá:
 Durante a implementação, você também pode:
 - **Verificar status**: Obtenha uma visão geral de alto nível do progresso do seu projeto.
   ```bash
-  /conductor:status
+  /conductor-status
   ```
 - **Reverter trabalho**: Desfaça um recurso ou tarefa específica se necessário.
   ```bash
-  /conductor:revert
+  /conductor-revert
   ```
 
 ## Referência de Comandos
 
 | Comando | Descrição | Artefatos |
 | --- | --- | --- |
-| `/conductor:setup` | Estrutura o projeto e configura o ambiente Conductor. Execute uma vez por projeto. | `conductor/product.md`<br>`conductor/product-guidelines.md`<br>`conductor/tech-stack.md`<br>`conductor/workflow.md`<br>`conductor/tracks.md` |
-| `/conductor:newTrack` | Inicia uma nova track de recurso ou bug. Gera `spec.md` e `plan.md`. | `conductor/tracks/<id>/spec.md`<br>`conductor/tracks/<id>/plan.md`<br>`conductor/tracks.md` |
-| `/conductor:implement` | Executa as tarefas definidas no plano da track atual. | `conductor/tracks.md`<br>`conductor/tracks/<id>/plan.md` |
-| `/conductor:status` | Exibe o progresso atual do arquivo de tracks e tracks ativas. | Lê `conductor/tracks.md` |
-| `/conductor:revert` | Reverte uma track, fase ou tarefa analisando o histórico do git. | Reverte histórico do git |
+| `/conductor-setup` | Estrutura o projeto e configura o ambiente Conductor. Execute uma vez por projeto. | `conductor/product.md`<br>`conductor/product-guidelines.md`<br>`conductor/tech-stack.md`<br>`conductor/workflow.md`<br>`conductor/tracks.md` |
+| `/conductor-newtrack` | Inicia uma nova track de recurso ou bug. Gera `spec.md` e `plan.md`. | `conductor/tracks/<id>/spec.md`<br>`conductor/tracks/<id>/plan.md`<br>`conductor/tracks.md` |
+| `/conductor-implement` | Executa as tarefas definidas no plano da track atual. | `conductor/tracks.md`<br>`conductor/tracks/<id>/plan.md` |
+| `/conductor-status` | Exibe o progresso atual do arquivo de tracks e tracks ativas. | Lê `conductor/tracks.md` |
+| `/conductor-revert` | Reverte uma track, fase ou tarefa analisando o histórico do git. | Reverte histórico do git |
 
 ## Origem
 
